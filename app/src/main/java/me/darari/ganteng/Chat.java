@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -31,6 +32,9 @@ public class Chat extends AppCompatActivity implements Bluetooth.CommunicationCa
     private TextView text;
     private ScrollView scrollView;
     private boolean registered=false;
+    char[] m = new char[2];
+    Button red, green, blue, d120, d60, d30, d15, offtimer, off, on;
+    ImageButton blink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,20 @@ public class Chat extends AppCompatActivity implements Bluetooth.CommunicationCa
         message = (EditText)findViewById(R.id.message);
         send = (Button)findViewById(R.id.send);
         scrollView = (ScrollView) findViewById(R.id.scrollView);
+
+        m[0] = 'R';
+        m[1] = '0';
+
+        red = findViewById(R.id.red);
+        green = findViewById(R.id.green);
+        blue = findViewById(R.id.blue);
+        d120 = findViewById(R.id.d120);
+        d60 = findViewById(R.id.d60);
+        d30 = findViewById(R.id.d30);
+        d15 = findViewById(R.id.d15);
+        offtimer = findViewById(R.id.offtimer);
+        off = findViewById(R.id.off);
+        blink = findViewById(R.id.blink);
 
         text.setMovementMethod(new ScrollingMovementMethod());
         send.setEnabled(false);
@@ -63,6 +81,107 @@ public class Chat extends AppCompatActivity implements Bluetooth.CommunicationCa
                 message.setText("");
                 b.send(msg);
                 Display("You: "+msg);
+            }
+        });
+
+        red.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                m[0] = 'R';
+                String msg = String.copyValueOf(m);
+                b.send(msg);
+                Display("Command: " + msg);
+            }
+        });
+
+        blue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                m[0] = 'B';
+                String msg = String.copyValueOf(m);
+                b.send(msg);
+                Display("Command: " + msg);
+            }
+        });
+
+        green.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                m[0] = 'G';
+                String msg = String.copyValueOf(m);
+                b.send(msg);
+                Display("Command: " + msg);
+            }
+        });
+
+        d120.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                m[1] = '3';
+                String msg = String.copyValueOf(m);
+                b.send(msg);
+                Display("Command: " + msg);
+            }
+        });
+
+        d60.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                m[1] = '2';
+                String msg = String.copyValueOf(m);
+                b.send(msg);
+                Display("Command: " + msg);
+            }
+        });
+
+        d30.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                m[1] = '1';
+                String msg = String.copyValueOf(m);
+                b.send(msg);
+                Display("Command: " + msg);
+            }
+        });
+
+        d15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                m[1] = '0';
+                String msg = String.copyValueOf(m);
+                b.send(msg);
+                Display("Command: " + msg);
+            }
+        });
+
+        offtimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                m[1] = 'D';
+                String msg = String.copyValueOf(m);
+                b.send(msg);
+                Display("Command: " + msg);
+            }
+        });
+
+        off.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                m[1] = 'D';
+                m[0] = 'D';
+                String msg = String.copyValueOf(m);
+                b.send(msg);
+                Display("Command: " + msg);
+            }
+        });
+
+        blink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                m[0] = 'K';
+                String msg = String.copyValueOf(m);
+                b.send(msg);
+                Display("Command: " + msg);
             }
         });
 

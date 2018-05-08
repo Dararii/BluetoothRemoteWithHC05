@@ -8,8 +8,8 @@
 
     <ImageView
         android:layout_gravity="center"
-        android:src="@drawable/logo"
-        android:background="@null"
+        android:src="@drawable/velo_logo"
+        android:background="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="50dip"

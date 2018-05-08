@@ -9,7 +9,7 @@
         android:id="@+id/text"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Select a device."
+        android:text="@string/select_a_device"
         android:paddingLeft="10dip"
         android:textSize="30sp"/>
 
@@ -19,7 +19,7 @@
         android:paddingLeft="10dip"
         android:paddingBottom="5dip"
         android:textColor="@color/bg"
-        android:text="You must be paired with your device to see it in the list. Pull to refresh the list."
+        android:text="@string/select_des"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text"/>
