@@ -1,4 +1,4 @@
-package me.aflak.bluetoothterminal;
+package me.darari.ganteng;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;

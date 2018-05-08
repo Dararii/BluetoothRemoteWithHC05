@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="me.aflak.bluetoothterminal" >
+    package="me.darari.ganteng" >
 
     <application
         android:allowBackup="true"

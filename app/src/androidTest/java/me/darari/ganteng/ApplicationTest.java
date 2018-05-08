@@ -1,4 +1,4 @@
-package me.aflak.bluetoothterminal;
+package me.darari.ganteng;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
